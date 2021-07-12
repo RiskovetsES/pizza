@@ -1,0 +1,83 @@
+@import '../variables';
+
+
+.pizza-block {
+  margin-bottom: 65px;
+  text-align: center;
+  width: 100%;
+
+  @media (max-width: 1090px) {
+    margin-bottom: 35px;
+  }
+
+  @media (max-width: 768px) {
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #efefef;
+      margin-bottom: 25px;
+      padding-bottom: 45px;
+    }
+  }
+
+  &__image {
+    width: 260px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1%;
+    margin-bottom: 20px;
+  }
+
+  &__selector {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+
+    ul {
+      display: flex;
+      flex: 1;
+
+      &:first-of-type {
+        margin-bottom: 6px;
+      }
+
+      li {
+        @include noselect();
+        padding: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        flex: 1;
+        font-weight: 600;
+
+        &.active {
+          background: #fff;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+          cursor: auto;
+        }
+
+        &.disabled {
+          opacity: 0.4;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  &__price {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0.015em;
+    line-height: 27px;
+  }
+}
