@@ -12,8 +12,4 @@ const Button = ({onClick, className, outline, children}) => (
   </button>
 )
 
-Button.propTypes = {
-  onClick: PropTypes.func,
-}
-
 export default Button
